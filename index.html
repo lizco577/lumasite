@@ -199,16 +199,6 @@ html.is-preview .loader{display:none}
   margin-top:52px;padding-top:34px;
 }
 .hero__p{font-size:18px;line-height:1.6;color:rgba(0,0,0,.7);max-width:460px}
-.hero__cue{
-  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
-  font-size:11px;letter-spacing:.24em;text-transform:uppercase;
-  color:rgba(0,0,0,.42);display:flex;flex-direction:column;align-items:center;gap:10px;
-}
-.hero__cue span{display:block;width:1px;height:34px;background:rgba(0,0,0,.28);animation:cue 2.2s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}
-  45%{transform:scaleY(1);transform-origin:top}
-  55%{transform:scaleY(1);transform-origin:bottom}
-  100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ---------------- reveals ---------------- */
 .rv{opacity:0;transform:translateY(26px);
@@ -497,7 +487,7 @@ html.is-preview .loader{display:none}
   opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);
 }
 .toast.is-on{opacity:1;transform:translate(-50%,0)}
-.is-preview .nav,.is-preview .hero__cue{display:none}
+.is-preview .nav{display:none}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -505,7 +495,6 @@ html.is-preview .loader{display:none}
   .rv{opacity:1;transform:none}
   .rise > span{transform:none}
   .contour{animation:none}
-  .hero__cue span{animation:none}
 }
 </style>
 <style>
@@ -550,7 +539,6 @@ html.is-preview .loader{display:none}
   .hero__foot .btn--demo,.cta__in .btn--demo{width:100%;justify-content:center}
   .cta__in > div:last-child{align-self:stretch}
   .hero__p{max-width:none;font-size:16px}
-  .hero__cue{display:none}
 
   /* ---- 01 the maze: still pinned, but the route runs vertically ---- */
   .mz__track{height:420vh}
@@ -760,7 +748,6 @@ html.is-preview .loader{display:none}
       <button class="btn btn--demo btn--demo-lav" data-to="demo">Request a Demo</button>
     </div>
   </div>
-  <div class="hero__cue"><span></span>Scroll</div>
 </section>
 
 <!-- 01 — the situation: old way / new way, pinned -->
