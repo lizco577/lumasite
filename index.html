@@ -641,6 +641,16 @@ html.is-preview .loader{display:none}
   .start__chip{width:40px;height:40px}
   .start__chip img{width:23px;height:23px}
   .foot__in{width:100%;max-width:none;margin:0;padding:0 16px}
+  /* the two big blurred blobs clip hard against overflow:hidden on narrow
+     screens (iOS renders the clipped blur as a banded edge). On phones drop
+     them and reproduce the deep-lavender glow with a clean gradient. */
+  .cta__blob{display:none}
+  .cta{
+    background:
+      radial-gradient(135% 55% at 12% 0%, var(--lav-deep) 0%, rgba(69,70,174,0) 60%),
+      radial-gradient(135% 55% at 88% 100%, var(--lav-deep) 0%, rgba(69,70,174,0) 60%),
+      var(--lav);
+  }
 }
 </style>
 </head>
