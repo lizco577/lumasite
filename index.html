@@ -105,7 +105,7 @@ h3{font-family:var(--body);font-weight:700;font-size:20px;line-height:1.3}
 </style>
 <style>
 /* ---------------- nav (Figma 190:4520, half height) ----------------
-   Logo lockup left, Request a Demo right. 24px gutters, solid white. */
+   Logo lockup left, Contact Sales CTA right. 24px gutters, solid white. */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:80;height:58px;
   display:flex;align-items:center;background:#fff;
@@ -119,7 +119,7 @@ h3{font-family:var(--body);font-weight:700;font-size:20px;line-height:1.3}
 .nav__logo{display:block;height:40px;width:auto}
 .nav__logo--m{display:none}
 .nav__links{display:flex;align-items:center}
-/* Request a Demo — identical box in the nav and the hero.
+/* Contact Sales CTA — identical box in the nav and the hero.
    Geometry lives on .btn--demo, colour on the -dk / -lt variants. */
 .btn--demo{
   font-weight:500;font-size:15px;line-height:1.2;
@@ -728,7 +728,7 @@ html.is-preview .loader{display:none}
       <img class="nav__logo nav__logo--m" src="assets/mobile%20nav%20logo.png" alt="Lumasite">
     </button>
     <nav class="nav__links">
-      <button class="btn btn--demo btn--demo-dk" data-to="demo">Request a Demo</button>
+      <button class="btn btn--demo btn--demo-dk" data-mailto>Contact Sales@elaraspatial.ai for a Demo</button>
     </nav>
   </div>
 </header>
@@ -745,7 +745,7 @@ html.is-preview .loader{display:none}
     </h1>
     <div class="hero__foot rv" style="--d:520ms">
       <p class="hero__p">Lumasite turns ordinary photos into a measured, priced, audit-ready estimate in hours rather than days.</p>
-      <button class="btn btn--demo btn--demo-lav" data-to="demo">Request a Demo</button>
+      <button class="btn btn--demo btn--demo-lav" data-mailto>Contact Sales@elaraspatial.ai for a Demo</button>
     </div>
   </div>
 </section>
@@ -938,7 +938,7 @@ html.is-preview .loader{display:none}
     <img class="cta__icon rv" src="assets/try%20it.png" alt="" width="64" height="64">
     <p class="eyebrow rv" style="--d:60ms">Try it now</p>
     <h2 class="display display--sm rv" style="--d:80ms">See Lumasite in action on a real claim.</h2>
-    <div class="rv" style="--d:200ms"><button class="btn btn--demo btn--demo-lt" data-demo>Request a Demo</button></div>
+    <div class="rv" style="--d:200ms"><button class="btn btn--demo btn--demo-lt" data-mailto>Contact Sales@elaraspatial.ai for a Demo</button></div>
   </div>
 </section>
 
@@ -990,7 +990,7 @@ html.is-preview .loader{display:none}
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-to]');
     if (t) { scrollToId(t.dataset.to); return; }
-    if (e.target.closest('[data-demo]')) { toast('Demo requests are stubbed in this prototype.'); return; }
+    if (e.target.closest('[data-mailto]')) { window.location.href = 'mailto:sales@elaraspatial.ai?subject=Lumasite%20Demo%20Request'; return; }
     var s = e.target.closest('[data-stub]');
     if (s) { e.preventDefault(); toast('Not part of this prototype.'); }
   });
@@ -1071,8 +1071,8 @@ html.is-preview .loader{display:none}
 
     var fly = document.createElement('button');
     fly.className = 'btn btn--demo demo-fly';
-    fly.setAttribute('data-to', 'demo');
-    fly.textContent = 'Request a Demo';
+    fly.setAttribute('data-mailto', '');
+    fly.textContent = 'Contact Sales@elaraspatial.ai for a Demo';
     document.body.appendChild(fly);
 
     var LAV = [127, 128, 255], INK = [11, 11, 12];
